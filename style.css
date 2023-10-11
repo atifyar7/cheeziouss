@@ -1,0 +1,476 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+
+*,
+*::after,
+*::before{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    font-family: 'Poppins', sans-serif;
+}
+
+/* ############### Utiliti classes ########### */
+
+.container{
+    max-width: 1200px;
+    width: 90%;
+    margin: auto;
+}
+
+.btn{
+    display: inline-block;
+    padding: 1em 2.5em;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    outline: none;
+    margin-top: 1em;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.btn-primary{
+    color: #fff;
+    background: #16a083;
+}
+
+/* ############# NAVBAR Styling For Desktop ############ */
+
+.navbar input[type='checkbox'],
+.navbar .hamburger-lines{
+    display: none;
+}
+
+.navbar{
+    box-shadow: 0px 5px 10px 0px #aaa;
+    position: fixed;
+    width: 100%;
+    background: #ffffff;
+    color: #000;
+    opacity: 0.85;
+    z-index: 999;
+}
+
+.navbar-container{
+    display: flex;
+    justify-content: space-between;
+    height: 64px;
+    align-items: center;
+}
+.menu-items{
+    order: 2;
+    display: flex;
+}
+.menu-items li{
+    list-style: none;
+    margin-left: 1.5rem;
+    font-size: 1.8rem;
+}
+.logo{
+    order: 1;
+    color: #000000;
+    font-size: 3rem;
+}
+.navbar a{
+    color: #444;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease-in-out;
+}
+.navbar a:hover{
+    color: #8b8700;
+}
+
+/* ############# Showcase styling ############# */
+
+.showcase-area{
+    height: 50vh;
+    background: url("./header-image2.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.showcase-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    font-size: 1.6rem;
+}
+
+/* ################ About US ###################### */
+
+#about{
+    padding: 50px 0px;
+    background: #f5f5f7;
+}
+.about-wrapper{
+    display: flex;
+    flex-wrap: wrap;
+}
+#about h2{
+    font-size: 3.2rem;
+}
+#about p{
+    font-size: 1.6rem;
+    color: #555;
+}
+#about .small{
+    font-size: 1.6rem;
+    color: #666;
+    font-weight: 600;
+}
+
+.about-img{
+    flex: 1 1 400px;
+    padding: 30px;
+    transform: translate(150%);
+    animation: about-img-animation 1s ease-in-out forwards;
+}
+@keyframes about-img-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+.about-text{
+    flex: 1 1 400px;
+    padding: 30px;
+    align-self: center;
+    transform: translate(-150%);
+    animation: about-text-animation 1s ease-in-out forwards;
+}
+@keyframes about-text-animation{
+    100%{
+        transform: translate(0);
+    }
+}
+.about-img img{
+    display: block;
+    height: 400px;
+    max-width: 100%;
+    margin: auto;
+    object-fit: cover;
+    object-position: center;
+}
+
+/* ############ Types of foods ################ */
+
+#food{
+    padding: 5rem 0 10rem 0;
+}
+.food-type{
+    position: relative;
+}
+#food h2{
+    text-align: center;
+    font-weight: 400;
+    margin-bottom: 40px;
+    text-transform: uppercase;
+    color: #555;
+    font-size: 3rem;
+}
+.food-container{
+    display: flex;
+    justify-content: space-between;
+}
+
+.food-container img{
+    display: block;
+    width: 350px;
+    margin: auto;
+    height: 300px;
+    object-fit: cover;
+    object-position: center;
+}
+
+.img-container{
+    position: relative;
+    width: 350px;
+}
+.img-content{
+    position: absolute;
+    top: 80%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0;
+    z-index: 2;
+    text-align: center;
+    transition: opacity 0.5s ease-in-out,
+                top 0.3s ease-in-out;
+}
+
+.img-content h3{
+    color: #fff;
+    font-size: 3rem;
+}
+.img-content {
+    font-size: 1.2rem;
+}
+
+.img-container::after{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #000000be;
+    opacity: 0;
+    z-index: 1;
+}
+.img-container:hover::after{
+    opacity: 1;
+}
+
+.img-container:hover .img-content{
+    opacity: 1;
+    top: 50%;
+}
+
+/* ########### Food Menu ################# */
+
+.food-menu-heading{
+    font-size: 4rem;
+    text-align: center;
+    font-weight: 400;
+    color: #666;
+}
+
+.food-menu-container{
+    display: flex;
+    /* flex-direction: column; */
+    flex-wrap: wrap;
+    padding: 50px 0px 30px 0px;
+}
+
+.food-menu-item{
+    display: flex;
+    /* flex-direction: column; */
+    flex: 1 1 600px;
+    justify-content: space-evenly;
+    margin-bottom: 3rem;
+}
+
+.food-menu-container img{
+    display: block;
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+}
+.food-description{
+    margin: auto 1.5rem;
+}
+
+.food-title{
+    font-size: 2.2rem;
+    font-weight: 400;
+    color: #444;
+}
+.food-description{
+    font-size: 1.4rem;
+    color: #555;
+    font-weight: 500;
+}
+.food-description .food-price{
+    color: #117964;
+    font-weight: 700;
+}
+
+/* ################ Testimonial #################### */
+
+/* .testimonial-title{
+    text-align: center;
+    font-size: 4rem;
+    font-weight: 400;
+    color: #444;
+    padding: 40px 0;
+}
+
+.testimonial-container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+.testimonial-box{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: 0 1rem;
+    text-align: center;
+}
+.customer-photo img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    object-fit: cover;
+    object-position: center;
+    margin: auto;
+} */
+
+#testimonials{
+    padding: 5rem 0rem;
+    background: #f1f1f1;
+}
+.testimonial-title{
+    text-align: center;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #555;
+}
+.testimonial-container{
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.6rem;
+    padding: 1rem;
+}
+.testimonial-container .checked{
+    color: #ff9529;
+}
+.testimonial-box .testimonail-text{
+    margin: 1rem 0;
+    color: #444;
+}
+.testimonial-box{
+    text-align: center;
+    padding: 1rem;
+}
+.customer-photo img{
+    display: block;
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 50%;
+    margin: 1rem auto;
+}
+
+/* ################### Contact us ################# */
+
+#contact{
+    background: #ffffff;
+}
+.contact-container{
+    display: flex;
+    justify-content: center;
+    margin: 40px auto;
+}
+.contact-img{
+    width: 50%;
+}
+.contact-img img{
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    object-position: center;
+}
+.form-container{
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    height: 400px;
+    padding: 0 40px;
+}
+
+.form-container .btn{
+    width: 100px;
+}
+.form-container h2{
+    margin-bottom: 20px;
+}
+input[type=text]{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+input[type=email]{
+    padding: 10px;
+    margin-bottom: 10px;
+}
+.form-container input{
+    display: block;
+}
+
+.form-container h2{
+    font-size: 2.3rem;
+    font-weight: 400;
+}
+
+/* ##################### Footer Stylng ############## */
+
+#footer h2{
+    text-align: center;
+    font-size: 2rem;
+    padding: 3rem;
+    font-weight: 500;
+    color: #fff;
+    background: rgb(65, 65, 65);
+}
+
+/* ################### Media quries #################### */
+
+@media ( max-width: 800px){
+    .navbar-container{
+        flex-direction: column;
+        height: 80px;
+    }
+    .food-container{
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .food-type:not(:last-child){
+        margin-bottom: 3rem;
+    }
+    .testimonial-container{
+        flex-direction: column;
+    }
+    .contact-container{
+        flex-direction: column;
+    }
+    .form-container h2{
+        text-align: center;
+        margin: 25px auto;
+    }
+    .form-container .btn{
+        margin: auto;
+    }
+    /* .img-container::after{
+        width: 50%;
+        left: 25%;
+    } */
+    .form-container{
+        width: 75%;
+        margin: 0 auto;
+    }
+    .contact-img{
+        width: 100%;
+    }
+    .contact-img img{
+        width: 100%;
+    }
+    .img-container{
+        margin: 0 auto;
+    }
+
+    .food-menu-item{
+        flex-direction: column;
+    }
+    .food-menu-item img{
+        margin: 0 auto;
+    }
+    .food-description{
+        text-align: center;
+    }
+
+}
